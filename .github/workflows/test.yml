@@ -2,7 +2,8 @@ name: Test Setup
 
 on:
   workflow_dispatch:  # Manual trigger only
-
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -25,7 +26,6 @@ jobs:
         env:
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
           MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
-          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         run: |
           if [ -z "$MY_EMAIL" ]; then
             echo "MY_EMAIL secret is not set!"
