@@ -4,7 +4,7 @@ from random import randint
 import smtplib
 
 my_email = os.environ.get("MY_EMAIL")
-password = os.environ.get("PASSWORD")
+password = os.environ.get("MY_PASSWORD")
 
 
 now = dt.datetime.now()
