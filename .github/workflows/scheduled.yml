@@ -43,4 +43,5 @@ jobs:
           # Add more secrets in Settings > Secrets > Actions
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
           MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         run: python main.py
