@@ -57,7 +57,8 @@ if (parameters["max_lat"] >= iss_latitude >= parameters["min_lat"] and
         parameters["max_lng"] >= iss_longitude >= parameters["min_lng"] and
         (time_now >= sunset or time_now <= sunrise)):
     print("The ISS is nearby. LOOK UP!")
-    with smtplib.SMTP("smtp.gmail.com", 587) as connection:
+else:
+        with smtplib.SMTP("smtp.gmail.com", 587) as connection:
         connection.starttls()
         connection.login(user=my_email, password=password)
         connection.sendmail(
