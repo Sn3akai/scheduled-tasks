@@ -53,11 +53,7 @@ print(f"CURRENT TIME: {time_now}")
 #then send me an email to tell me to look up.
 #BONUS: run the code every 60 seconds
 
-if (parameters["max_lat"] >= iss_latitude >= parameters["min_lat"] and
-        parameters["max_lng"] >= iss_longitude >= parameters["min_lng"] and
-        (time_now >= sunset or time_now <= sunrise)):
-    print("The ISS is nearby. LOOK UP!")
-else:
+if (parameters["max_lat"] >= iss_latitude >= parameters["min_lat"] and parameters["max_lng"] >= iss_longitude >= parameters["min_lng"] and (time_now >= sunset or time_now <= sunrise)):
     with smtplib.SMTP("smtp.gmail.com", 587) as connection:
         connection.starttls()
         connection.login(user=my_email, password=password)
@@ -70,3 +66,4 @@ else:
                 f"Latitude: {iss_latitude}\n"
                 f"Longitude: {iss_longitude}\n"
         )
+            
